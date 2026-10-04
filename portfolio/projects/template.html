@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth; scroll-padding-top: 80px;">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="[Project description]">
+  <title>[Project Name] · Aditya Patel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+  <!-- navbar -->
+  <nav class="navbar">
+    <a href="../index.html" class="nav-logo">
+      <span class="logo-text">aditya</span><span class="logo-dot">.</span>
+    </a>
+    <div class="nav-links">
+      <a href="../pages/skills.html">Skills</a>
+      <a href="../pages/about.html">About</a>
+      <a href="../index.html#projects" class="active">Projects</a>
+      <a href="../pages/contact.html">Contact</a>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">
+        <i data-lucide="sun" class="icon-sun"></i>
+        <i data-lucide="moon" class="icon-moon"></i>
+      </button>
+    </div>
+    <button class="hamburger" onclick="toggleDrawer()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile drawer -->
+  <div class="nav-overlay" onclick="toggleDrawer()"></div>
+  <div class="mobile-drawer">
+    <button class="drawer-close" onclick="toggleDrawer()" title="Close menu">
+      <i data-lucide="x"></i>
+    </button>
+    <div class="drawer-links">
+      <a href="../pages/skills.html">Skills</a>
+      <a href="../pages/about.html">About</a>
+      <a href="../index.html#projects" class="active">Projects</a>
+      <a href="../pages/contact.html" onclick="toggleDrawer()">Contact</a>
+    </div>
+    <div class="drawer-theme-toggle">
+      <span>Theme</span>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">
+        <i data-lucide="sun" class="icon-sun"></i>
+        <i data-lucide="moon" class="icon-moon"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- page header -->
+    <div class="page-header">
+      <a href="../index.html#projects" class="back-link"><i data-lucide="chevron-left"></i></a>
+      <h1>[Project Name]</h1>
+      <p class="page-intro">[One-line description — what it does, simply.]</p>
+    </div>
+
+    <!-- project hero image -->
+    <div class="project-hero">
+      <img src="../assets/images/projects/[project-image].png" alt="[Project Name] screenshot">
+    </div>
+
+    <!-- quick facts -->
+    <div class="project-section">
+      <div class="intro-facts">
+        <div class="intro-fact">
+          <span class="fact-label">Role</span>
+          <span class="fact-value">[Developer / Designer / Both]</span>
+        </div>
+        <div class="intro-fact">
+          <span class="fact-label">Timeline</span>
+          <span class="fact-value">[Duration, e.g., 2 weeks]</span>
+        </div>
+        <div class="intro-fact">
+          <span class="fact-label">Built with</span>
+          <span class="fact-value">[Flutter, ASP.NET, etc.]</span>
+        </div>
+        <div class="intro-fact">
+          <span class="fact-label">Status</span>
+          <span class="fact-value">[Complete / In Progress / Concept]</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- the problem -->
+    <div class="project-section">
+      <h2>The Problem</h2>
+      <p class="about-text">
+        [What was confusing, overwhelming, or unnecessarily complex? 
+        Keep it human — one or two sentences max.]
+      </p>
+    </div>
+
+    <!-- the approach -->
+    <div class="project-section">
+      <h2>The Approach</h2>
+      <p class="about-text">
+        [How did you cut through the noise? What did you simplify?
+        Focus on clarity, not technical jargon.]
+      </p>
+    </div>
+
+    <!-- system architecture -->
+    <div class="project-section">
+      <h2>System Architecture</h2>
+      <p class="about-text">
+        [Describe the high-level architecture: how many layers/services, how they communicate, 
+        and the key design philosophy (offline-first, event-driven, monolith, etc.).]
+      </p>
+      <div class="arch-diagram">
+        <div class="arch-row">
+          <div class="arch-box">
+            <div class="arch-box-label">[Layer]</div>
+            <div class="arch-box-name">[Component Name]</div>
+            <div class="arch-box-detail">[What it handles]</div>
+          </div>
+        </div>
+        <div class="arch-connector">↕</div>
+        <div class="arch-row">
+          <div class="arch-box">
+            <div class="arch-box-label">[Layer]</div>
+            <div class="arch-box-name">[Component Name]</div>
+            <div class="arch-box-detail">[What it handles]</div>
+          </div>
+          <div class="arch-box">
+            <div class="arch-box-label">[Layer]</div>
+            <div class="arch-box-name">[Component Name]</div>
+            <div class="arch-box-detail">[What it handles]</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- database / data design (if applicable) -->
+    <div class="project-section">
+      <h2>Data Design</h2>
+      <p class="about-text">
+        [Explain how data is structured and why. What storage was chosen? 
+        What tradeoffs were made — normalization vs speed, SQL vs NoSQL, embedded vs remote?]
+      </p>
+      <div class="schema-grid">
+        <div class="schema-card">
+          <div class="schema-card-title"><i data-lucide="[icon]"></i> [table_name]</div>
+          <ul class="schema-fields">
+            <li><span class="schema-field-name">id</span> <span class="schema-field-type">PK</span></li>
+            <li><span class="schema-field-name">[field]</span> <span class="schema-field-type">[TYPE]</span></li>
+          </ul>
+        </div>
+        <!-- Add more schema-card blocks as needed -->
+      </div>
+    </div>
+
+    <!-- API design (if applicable) -->
+    <!--
+    <div class="project-section">
+      <h2>API Structure</h2>
+      <p class="about-text">[Describe API philosophy — REST, GraphQL, etc.]</p>
+      <table class="api-table">
+        <thead>
+          <tr><th>Method</th><th>Endpoint</th><th>Purpose</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="api-method get">GET</span></td>
+            <td class="api-endpoint">/api/[resource]</td>
+            <td>[What it does]</td>
+          </tr>
+          <tr>
+            <td><span class="api-method post">POST</span></td>
+            <td class="api-endpoint">/api/[resource]</td>
+            <td>[What it does]</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    -->
+
+    <!-- technical decisions & tradeoffs -->
+    <div class="project-section">
+      <h2>Technical Decisions & Tradeoffs</h2>
+      <div class="decision-grid">
+        <div class="decision-card">
+          <div class="decision-title"><i data-lucide="[icon]"></i> [Decision Name]</div>
+          <div class="decision-chose">Chose: [What you picked]</div>
+          <div class="decision-why">[Why — the constraint, the user impact, the engineering reason.]</div>
+          <div class="decision-alt">Alternative: [What you didn't pick — and why not.]</div>
+        </div>
+        <div class="decision-card">
+          <div class="decision-title"><i data-lucide="[icon]"></i> [Decision Name]</div>
+          <div class="decision-chose">Chose: [What you picked]</div>
+          <div class="decision-why">[Why — the constraint, the user impact, the engineering reason.]</div>
+          <div class="decision-alt">Alternative: [What you didn't pick — and why not.]</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- performance & scaling (optional) -->
+    <!--
+    <div class="project-section">
+      <h2>Performance & Optimization</h2>
+      <p class="about-text">[Describe perf strategy.]</p>
+      <div class="scale-grid">
+        <div class="scale-item">
+          <div class="scale-number">[value]</div>
+          <div class="scale-label">[Metric]</div>
+          <div class="scale-detail">[How it was achieved]</div>
+        </div>
+        <div class="scale-item">
+          <div class="scale-number">[value]</div>
+          <div class="scale-label">[Metric]</div>
+          <div class="scale-detail">[How it was achieved]</div>
+        </div>
+        <div class="scale-item">
+          <div class="scale-number">[value]</div>
+          <div class="scale-label">[Metric]</div>
+          <div class="scale-detail">[How it was achieved]</div>
+        </div>
+      </div>
+    </div>
+    -->
+
+    <!-- key features -->
+    <div class="project-section">
+      <h2>What It Does</h2>
+      <div class="feature-grid">
+        <div class="feature-item">
+          <span class="feature-icon"><i data-lucide="[icon-name]"></i></span>
+          <span class="feature-label">[Feature 1]</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon"><i data-lucide="[icon-name]"></i></span>
+          <span class="feature-label">[Feature 2]</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon"><i data-lucide="[icon-name]"></i></span>
+          <span class="feature-label">[Feature 3]</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- screenshots / gallery (optional) -->
+    <!-- 
+    <div class="project-section">
+      <h2>Gallery</h2>
+      <div class="project-gallery">
+        <img src="../assets/images/projects/[project]-1.png" alt="Screenshot 1">
+        <img src="../assets/images/projects/[project]-2.png" alt="Screenshot 2">
+      </div>
+    </div>
+    -->
+
+    <!-- reflection -->
+    <div class="project-section">
+      <h2>What I Learned</h2>
+      <p class="about-text">
+        [One key takeaway. What would you do differently? 
+        What confirmed your approach?]
+      </p>
+    </div>
+
+    <!-- links -->
+    <div class="project-section project-links">
+      <a href="[github-link]" target="_blank" class="cta-button">
+        <i data-lucide="github"></i> View Code
+      </a>
+      <!-- <a href="[live-link]" target="_blank" class="cta-button secondary">
+        <i data-lucide="external-link"></i> Live Demo
+      </a> -->
+    </div>
+
+    <!-- next project -->
+    <div class="project-nav">
+      <a href="[next-project].html" class="next-project-link">
+        Next Project <i data-lucide="chevron-right"></i>
+      </a>
+    </div>
+
+  </div>
+  <script>lucide.createIcons();</script>
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      lucide.createIcons();
+    }
+    function toggleDrawer() {
+      document.querySelector('.hamburger').classList.toggle('active');
+      document.querySelector('.mobile-drawer').classList.toggle('active');
+      document.querySelector('.nav-overlay').classList.toggle('active');
+      document.body.style.overflow = document.querySelector('.mobile-drawer').classList.contains('active') ? 'hidden' : '';
+    }
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+</body>
+
+</html>

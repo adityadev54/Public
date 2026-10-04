@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en" style="scroll-behavior:smooth;scroll-padding-top:80px">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description"
+    content="Aditya Patel is a Computer Science student at the University of South Carolina building software, backend systems, and shipped products.">
+  <title>Aditya Patel · Software & AI Systems</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/site.js"></script>
+  <script src="assets/js/hero-shader.js?v=8" defer></script>
+</head>
+
+<body>
+  <nav class="navbar" aria-label="Main navigation"><a href="#top" class="nav-logo"><span
+        class="logo-text">aditya</span><span class="logo-dot">.</span></a>
+    <div class="nav-links"><a href="#top" class="active">Home</a><a href="#work">Work</a><a href="#lab">Lab</a><a
+        href="pages/contact.html">Contact</a><button class="theme-toggle" onclick="toggleTheme()"
+        aria-label="Toggle color theme"><i data-lucide="sun" class="icon-sun"></i><i data-lucide="moon"
+          class="icon-moon"></i></button></div><button class="hamburger" onclick="toggleDrawer()"
+      aria-label="Open navigation"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="nav-overlay" onclick="toggleDrawer()"></div>
+  <div class="mobile-drawer"><button class="drawer-close" onclick="toggleDrawer()" aria-label="Close navigation"><i
+        data-lucide="x"></i></button>
+    <div class="drawer-links"><a href="#top">Home</a><a href="#work">Work</a><a href="#lab">Lab</a><a
+        href="pages/contact.html">Contact</a></div>
+  </div>
+  <main class="container">
+    <header class="header personal-hero" id="top">
+      <div class="author-card">
+        <div class="author-info"><span class="hero-intro">Aditya Patel · Software builder</span>
+          <h1><span>I make ideas</span><span>work.</span></h1>
+          <p class="hero-tagline">I design, engineer, and ship useful software.</p>
+          <div class="hero-actions"><a href="#work" class="resume-btn"><i data-lucide="arrow-down-right"></i>See the
+              work</a><a href="https://github.com/pateladi70" target="_blank" rel="noopener" class="text-action"><i
+                data-lucide="github"></i>GitHub</a><a href="assets/docs/Resume.pdf" target="_blank"
+              class="text-action"><i data-lucide="file-text"></i>Résumé</a></div>
+        </div>
+        <figure class="shader-portrait" data-hero-shader>
+          <img src="assets/images/Aditya-sketching-alpha.png" alt="Portrait of Aditya Patel sketching">
+          <canvas aria-label="An interactive particle portrait that forms a spiral galaxy"></canvas>
+          <!-- <figcaption class="galaxy-hint"><span>Portrait particles</span><span aria-hidden="true">→</span><span>Scroll or tap to form the galaxy</span></figcaption> -->
+        </figure>
+      </div>
+    </header>
+    <section class="skills about-capabilities" id="capabilities" data-reveal>
+      <div class="about-capabilities-intro"><span class="section-kicker">About · What I work across</span>
+        <h2>I learn by making it real.</h2>
+        <p>Computer science gives me the foundation. Building for real use turns that foundation into better
+          questions—and better software.</p><small>B.S. Computer Science · Columbia, South Carolina</small>
+      </div>
+      <div class="capability-grid">
+        <article class="capability-item"><i data-lucide="server"></i>
+          <h3>Backend</h3>
+          <p>C#, ASP.NET and production logic.</p>
+        </article>
+        <article class="capability-item"><i data-lucide="database"></i>
+          <h3>Data</h3>
+          <p>PostgreSQL, SQLite and local search.</p>
+        </article>
+        <article class="capability-item"><i data-lucide="blocks"></i>
+          <h3>Product</h3>
+          <p>From requirements to release feedback.</p>
+        </article>
+        <article class="capability-item"><i data-lucide="smartphone"></i>
+          <h3>Mobile</h3>
+          <p>Flutter, offline-first work and app releases.</p>
+        </article>
+      </div>
+    </section>
+    <section class="home-process home-lab" aria-labelledby="process-title" data-reveal>
+      <div class="home-process-intro">
+        <div><span class="hero-intro">Inside the lab</span>
+          <h2 id="process-title">Small builds. Real questions.</h2>
+        </div>
+        <p>Coding experiments in progress.</p>
+      </div>
+      <div class="process-cuts" role="group" aria-label="Current lab projects">
+        <article class="process-cut active" tabindex="0" aria-expanded="true"><img
+            src="assets/images/editorial/build-process.png"
+            alt="Planning workspace for the Rubberduck debugging experiment"><span
+            class="process-cut-copy"><small>Building · AI + code</small><strong>Rubberduck</strong><span>A debugging
+              companion that asks before it answers.</span><a class="lab-card-link"
+              href="pages/research.html#rubberduck">Open project <i data-lucide="arrow-up-right"></i></a></span>
+        </article>
+        <article class="process-cut" tabindex="0" aria-expanded="false"><img
+            src="assets/images/editorial/process-build.png" alt="Code and performance testing workspace"
+            loading="lazy"><span class="process-cut-copy"><small>Testing · Retrieval</small><strong>Search under
+              load</strong><span>Measuring what changes when local search scales.</span><a class="lab-card-link"
+              href="pages/research.html#search-under-load">Open project <i data-lucide="arrow-up-right"></i></a></span>
+        </article>
+        <article class="process-cut" tabindex="0" aria-expanded="false"><img
+            src="assets/images/editorial/book-planner.png"
+            alt="An open weekly planner beside a laptop and green notebooks on a quiet study desk" loading="lazy"><img
+            class="book-watermark" src="assets/brand/book-icon.svg" width="40" height="40" alt="" aria-hidden="true"
+            loading="lazy"><span class="process-cut-copy"><small>Early version · Flutter</small><strong>The
+              Book</strong><span>A quiet planner for coursework and everyday life, kept in your Excel workbook.</span><a
+              class="lab-card-link" href="https://github.com/adityadev54/SemesterPlanning" target="_blank"
+              rel="noopener">Open project <i data-lucide="arrow-up-right"></i></a></span></article>
+      </div>
+    </section>
+    <section class="projects" id="work" data-reveal>
+      <div class="work-intro">
+        <div><span class="section-kicker">Selected engineering work</span>
+          <h2>Software with real constraints</h2>
+        </div>
+      </div>
+      <div class="projects-grid"><a href="projects/get-moving-meals.html" class="project-card">
+          <div class="project-card-image"><img src="assets/images/projects/MealPlan.png"
+              alt="Get Moving Meals product artwork"></div>
+          <div class="project-card-content"><span class="work-type">Development Challenge winner · Production
+              product</span>
+            <div class="project-card-header">
+              <h3>Get Moving Meals</h3><span class="project-arrow"><i data-lucide="chevron-right"></i></span>
+            </div>
+            <p>C# and ASP.NET meal planning product backed by PostgreSQL, serving real users and evolving from observed
+              behavior.</p>
+          </div>
+        </a><a href="projects/bhagavad-gita.html" class="project-card">
+          <div class="project-card-image"><img src="assets/images/projects/BGSV.jpg" alt="Bhagavad Gita app artwork">
+          </div>
+          <div class="project-card-content"><span class="work-type">Offline-first mobile architecture</span>
+            <div class="project-card-header">
+              <h3>Bhagavad Gita — The Sacred Verses</h3><span class="project-arrow"><i
+                  data-lucide="chevron-right"></i></span>
+            </div>
+            <p>Flutter application built around embedded SQLite, multilingual content, and fast FTS5 local search.</p>
+          </div>
+        </a><a href="projects/repwise-fitness.html" class="project-card">
+          <div class="project-card-image"><img src="assets/images/projects/repwise/icon.jpg"
+              alt="Repwise Fitness app artwork"></div>
+          <div class="project-card-content"><span class="work-type">Shipped consumer product</span>
+            <div class="project-card-header">
+              <h3>Repwise Fitness</h3><span class="project-arrow"><i data-lucide="chevron-right"></i></span>
+            </div>
+            <p>An App Store fitness product with adaptive planning, active workout sessions, and progress context.</p>
+          </div>
+        </a></div>
+    </section>
+    <section class="creative-life" id="art-photography" aria-labelledby="creative-title" data-reveal>
+      <header class="creative-intro">
+        <div><span class="section-kicker">Art &amp; photography</span>
+          <h2 id="creative-title">Outside the code.</h2>
+        </div>
+        <p>In my free time, I love making art and taking photographs.</p>
+      </header>
+      <div class="creative-grid">
+        <!-- Replace placeholder contents with personal images; retain the full image with object-fit: contain. -->
+        <figure class="creative-piece creative-piece--feature">
+          <button class="creative-toggle" type="button" aria-label="Show details for Art 01" aria-expanded="false"
+            aria-controls="creative-details-01" data-piece-label="Art 01">
+            <span class="creative-turn">
+              <span class="creative-front">
+                <span class="creative-frame"><span class="creative-placeholder"><small>Image to
+                      come</small></span></span>
+                <span class="creative-flip-hint" aria-hidden="true">Details ↻</span>
+                <span class="creative-caption"><span>Art</span><span>01</span></span>
+              </span>
+              <span class="creative-back" id="creative-details-01" aria-hidden="true">
+                <span class="creative-detail"><small>Category</small><strong>Art</strong></span>
+                <span class="creative-detail"><small>Credit</small><strong>Aditya Patel</strong></span>
+                <span class="creative-back-hint" aria-hidden="true">↶ Flip back</span>
+              </span>
+            </span>
+          </button>
+        </figure>
+        <figure class="creative-piece creative-piece--small">
+          <button class="creative-toggle" type="button" aria-label="Show details for Art 02" aria-expanded="false"
+            aria-controls="creative-details-02" data-piece-label="Art 02">
+            <span class="creative-turn">
+              <span class="creative-front">
+                <span class="creative-frame"><span class="creative-placeholder"><small>Image to
+                      come</small></span></span>
+                <span class="creative-flip-hint" aria-hidden="true">Details ↻</span>
+                <span class="creative-caption"><span>Art</span><span>02</span></span>
+              </span>
+              <span class="creative-back" id="creative-details-02" aria-hidden="true">
+                <span class="creative-detail"><small>Category</small><strong>Art</strong></span>
+                <span class="creative-detail"><small>Credit</small><strong>Aditya Patel</strong></span>
+                <span class="creative-back-hint" aria-hidden="true">↶ Flip back</span>
+              </span>
+            </span>
+          </button>
+        </figure>
+        <figure class="creative-piece creative-piece--tall">
+          <button class="creative-toggle" type="button" aria-label="Show details for Photography 03"
+            aria-expanded="false" aria-controls="creative-details-03" data-piece-label="Photography 03">
+            <span class="creative-turn">
+              <span class="creative-front">
+                <span class="creative-frame"><span class="creative-placeholder"><small>Image to
+                      come</small></span></span>
+                <span class="creative-flip-hint" aria-hidden="true">Details ↻</span>
+                <span class="creative-caption"><span>Photography</span><span>03</span></span>
+              </span>
+              <span class="creative-back" id="creative-details-03" aria-hidden="true">
+                <span class="creative-detail"><small>Category</small><strong>Photography</strong></span>
+                <span class="creative-detail"><small>Credit</small><strong>Aditya Patel</strong></span>
+                <span class="creative-back-hint" aria-hidden="true">↶ Flip back</span>
+              </span>
+            </span>
+          </button>
+        </figure>
+        <figure class="creative-piece creative-piece--wide">
+          <button class="creative-toggle" type="button" aria-label="Show details for Photography 04"
+            aria-expanded="false" aria-controls="creative-details-04" data-piece-label="Photography 04">
+            <span class="creative-turn">
+              <span class="creative-front">
+                <span class="creative-frame"><span class="creative-placeholder"><small>Image to
+                      come</small></span></span>
+                <span class="creative-flip-hint" aria-hidden="true">Details ↻</span>
+                <span class="creative-caption"><span>Photography</span><span>04</span></span>
+              </span>
+              <span class="creative-back" id="creative-details-04" aria-hidden="true">
+                <span class="creative-detail"><small>Category</small><strong>Photography</strong></span>
+                <span class="creative-detail"><small>Credit</small><strong>Aditya Patel</strong></span>
+                <span class="creative-back-hint" aria-hidden="true">↶ Flip back</span>
+              </span>
+            </span>
+          </button>
+        </figure>
+        <figure class="creative-piece creative-piece--small">
+          <button class="creative-toggle" type="button" aria-label="Show details for Art 05" aria-expanded="false"
+            aria-controls="creative-details-05" data-piece-label="Art 05">
+            <span class="creative-turn">
+              <span class="creative-front">
+                <span class="creative-frame"><span class="creative-placeholder"><small>Image to
+                      come</small></span></span>
+                <span class="creative-flip-hint" aria-hidden="true">Details ↻</span>
+                <span class="creative-caption"><span>Art</span><span>05</span></span>
+              </span>
+              <span class="creative-back" id="creative-details-05" aria-hidden="true">
+                <span class="creative-detail"><small>Category</small><strong>Art</strong></span>
+                <span class="creative-detail"><small>Credit</small><strong>Aditya Patel</strong></span>
+                <span class="creative-back-hint" aria-hidden="true">↶ Flip back</span>
+              </span>
+            </span>
+          </button>
+        </figure>
+        <figure class="creative-piece creative-piece--small">
+          <button class="creative-toggle" type="button" aria-label="Show details for Art 06" aria-expanded="false"
+            aria-controls="creative-details-06" data-piece-label="Art 06">
+            <span class="creative-turn">
+              <span class="creative-front">
+                <span class="creative-frame"><span class="creative-placeholder"><small>Image to
+                      come</small></span></span>
+                <span class="creative-flip-hint" aria-hidden="true">Details ↻</span>
+                <span class="creative-caption"><span>Art</span><span>06</span></span>
+              </span>
+              <span class="creative-back" id="creative-details-06" aria-hidden="true">
+                <span class="creative-detail"><small>Category</small><strong>Art</strong></span>
+                <span class="creative-detail"><small>Credit</small><strong>Aditya Patel</strong></span>
+                <span class="creative-back-hint" aria-hidden="true">↶ Flip back</span>
+              </span>
+            </span>
+          </button>
+        </figure>
+        <figure class="creative-piece creative-piece--small">
+          <button class="creative-toggle" type="button" aria-label="Show details for Art 07" aria-expanded="false"
+            aria-controls="creative-details-07" data-piece-label="Art 07">
+            <span class="creative-turn">
+              <span class="creative-front">
+                <span class="creative-frame"><span class="creative-placeholder"><small>Image to
+                      come</small></span></span>
+                <span class="creative-flip-hint" aria-hidden="true">Details ↻</span>
+                <span class="creative-caption"><span>Art</span><span>07</span></span>
+              </span>
+              <span class="creative-back" id="creative-details-07" aria-hidden="true">
+                <span class="creative-detail"><small>Category</small><strong>Art</strong></span>
+                <span class="creative-detail"><small>Credit</small><strong>Aditya Patel</strong></span>
+                <span class="creative-back-hint" aria-hidden="true">↶ Flip back</span>
+              </span>
+            </span>
+          </button>
+        </figure>
+        <figure class="creative-piece creative-piece--wide">
+          <button class="creative-toggle" type="button" aria-label="Show details for Photography 08"
+            aria-expanded="false" aria-controls="creative-details-08" data-piece-label="Photography 08">
+            <span class="creative-turn">
+              <span class="creative-front">
+                <span class="creative-frame"><span class="creative-placeholder"><small>Image to
+                      come</small></span></span>
+                <span class="creative-flip-hint" aria-hidden="true">Details ↻</span>
+                <span class="creative-caption"><span>Photography</span><span>08</span></span>
+              </span>
+              <span class="creative-back" id="creative-details-08" aria-hidden="true">
+                <span class="creative-detail"><small>Category</small><strong>Photography</strong></span>
+                <span class="creative-detail"><small>Credit</small><strong>Aditya Patel</strong></span>
+                <span class="creative-back-hint" aria-hidden="true">↶ Flip back</span>
+              </span>
+            </span>
+          </button>
+        </figure>
+        <figure class="creative-piece creative-piece--tall">
+          <button class="creative-toggle" type="button" aria-label="Show details for Art 09" aria-expanded="false"
+            aria-controls="creative-details-09" data-piece-label="Art 09">
+            <span class="creative-turn">
+              <span class="creative-front">
+                <span class="creative-frame"><span class="creative-placeholder"><small>Image to
+                      come</small></span></span>
+                <span class="creative-flip-hint" aria-hidden="true">Details ↻</span>
+                <span class="creative-caption"><span>Art</span><span>09</span></span>
+              </span>
+              <span class="creative-back" id="creative-details-09" aria-hidden="true">
+                <span class="creative-detail"><small>Category</small><strong>Art</strong></span>
+                <span class="creative-detail"><small>Credit</small><strong>Aditya Patel</strong></span>
+                <span class="creative-back-hint" aria-hidden="true">↶ Flip back</span>
+              </span>
+            </span>
+          </button>
+        </figure>
+        <figure class="creative-piece creative-piece--small">
+          <button class="creative-toggle" type="button" aria-label="Show details for Art 10" aria-expanded="false"
+            aria-controls="creative-details-10" data-piece-label="Art 10">
+            <span class="creative-turn">
+              <span class="creative-front">
+                <span class="creative-frame"><span class="creative-placeholder"><small>Image to
+                      come</small></span></span>
+                <span class="creative-flip-hint" aria-hidden="true">Details ↻</span>
+                <span class="creative-caption"><span>Art</span><span>10</span></span>
+              </span>
+              <span class="creative-back" id="creative-details-10" aria-hidden="true">
+                <span class="creative-detail"><small>Category</small><strong>Art</strong></span>
+                <span class="creative-detail"><small>Credit</small><strong>Aditya Patel</strong></span>
+                <span class="creative-back-hint" aria-hidden="true">↶ Flip back</span>
+              </span>
+            </span>
+          </button>
+        </figure>
+        <figure class="creative-piece creative-piece--wide">
+          <button class="creative-toggle" type="button" aria-label="Show details for Photography 11"
+            aria-expanded="false" aria-controls="creative-details-11" data-piece-label="Photography 11">
+            <span class="creative-turn">
+              <span class="creative-front">
+                <span class="creative-frame"><span class="creative-placeholder"><small>Image to
+                      come</small></span></span>
+                <span class="creative-flip-hint" aria-hidden="true">Details ↻</span>
+                <span class="creative-caption"><span>Photography</span><span>11</span></span>
+              </span>
+              <span class="creative-back" id="creative-details-11" aria-hidden="true">
+                <span class="creative-detail"><small>Category</small><strong>Photography</strong></span>
+                <span class="creative-detail"><small>Credit</small><strong>Aditya Patel</strong></span>
+                <span class="creative-back-hint" aria-hidden="true">↶ Flip back</span>
+              </span>
+            </span>
+          </button>
+        </figure>
+        <figure class="creative-piece creative-piece--small">
+          <button class="creative-toggle" type="button" aria-label="Show details for Art 12" aria-expanded="false"
+            aria-controls="creative-details-12" data-piece-label="Art 12">
+            <span class="creative-turn">
+              <span class="creative-front">
+                <span class="creative-frame"><span class="creative-placeholder"><small>Image to
+                      come</small></span></span>
+                <span class="creative-flip-hint" aria-hidden="true">Details ↻</span>
+                <span class="creative-caption"><span>Art</span><span>12</span></span>
+              </span>
+              <span class="creative-back" id="creative-details-12" aria-hidden="true">
+                <span class="creative-detail"><small>Category</small><strong>Art</strong></span>
+                <span class="creative-detail"><small>Credit</small><strong>Aditya Patel</strong></span>
+                <span class="creative-back-hint" aria-hidden="true">↶ Flip back</span>
+              </span>
+            </span>
+          </button>
+        </figure>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-left"><span class="footer-logo">aditya<span class="logo-dot">.</span></span><span
+          class="footer-tagline">Computer Science · Software &amp; AI Systems</span><small
+          class="footer-credit"><span>Built and designed by Aditya Patel.</span><span>All rights
+            reserved.</span></small></div>
+      <div class="footer-links"><a href="mailto:pateladi1525@gmail.com" class="footer-link" aria-label="Email"><i
+            data-lucide="mail"></i></a><a href="https://github.com/pateladi70" target="_blank" rel="noopener"
+          class="footer-link" aria-label="GitHub"><i data-lucide="github"></i></a><a
+          href="assets/docs/Final%20Resume.pdf" target="_blank" class="footer-link" aria-label="Resume"><i
+            data-lucide="file-text"></i></a></div>
+    </div>
+  </footer>
+  <script>document.querySelectorAll('.process-cut').forEach(c => c.addEventListener('click', () => { document.querySelectorAll('.process-cut').forEach(x => { x.classList.toggle('active', x === c); x.setAttribute('aria-pressed', x === c) }) }))</script>
+  <script src="assets/js/cursor.js"></script>
+</body>
+
+</html>

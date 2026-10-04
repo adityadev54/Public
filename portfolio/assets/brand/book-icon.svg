@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">Book app icon</title>
+  <rect width="128" height="128" rx="29" fill="#344735"/>
+  <path fill="#F6F5F0" fill-rule="evenodd" d="M37 21H68C85 21 95 29 95 42C95 50 91 56 84 59C95 62 101 69 101 79C101 93 90 102 71 102H37C33 102 31 100 31 96V27C31 23 33 21 37 21ZM50 34V51H67C75 51 80 48 80 42C80 37 75 34 67 34H66V44L62 41L58 44V34H50ZM50 66V89H70C80 89 86 85 86 78C86 71 80 66 70 66H50ZM39 33V90H42V33H39Z"/>
+</svg>

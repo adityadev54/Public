@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth; scroll-padding-top: 80px;">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with Aditya Patel - Software Developer available for collaboration, freelance, and opportunities.">
+  <title>Contact · Aditya Patel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+  <!-- navbar -->
+  <nav class="navbar">
+    <a href="../index.html" class="nav-logo">
+      <span class="logo-text">aditya</span><span class="logo-dot">.</span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="projects.html">Work</a>
+      <a href="research.html">Lab</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">
+        <i data-lucide="sun" class="icon-sun"></i>
+        <i data-lucide="moon" class="icon-moon"></i>
+      </button>
+    </div>
+    <button class="hamburger" onclick="toggleDrawer()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile drawer -->
+  <div class="nav-overlay" onclick="toggleDrawer()"></div>
+  <div class="mobile-drawer">
+    <button class="drawer-close" onclick="toggleDrawer()" title="Close menu">
+      <i data-lucide="x"></i>
+    </button>
+    <div class="drawer-links">
+      <a href="../index.html">Home</a>
+      <a href="projects.html">Work</a>
+      <a href="research.html">Lab</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+    <div class="drawer-theme-toggle">
+      <span>Theme</span>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">
+        <i data-lucide="sun" class="icon-sun"></i>
+        <i data-lucide="moon" class="icon-moon"></i>
+      </button>
+    </div>
+  </div>
+
+  <main>
+    <section class="ct-native-intro">
+      <div class="s-inner">
+        <a href="../index.html" class="back-link" aria-label="Back home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5"/></svg></a>
+        <span class="s-eyebrow">Contact</span>
+        <h1 class="ct-native-headline">Let’s build something<br>that matters.</h1>
+        <p class="ct-native-subtitle">Have a project, opportunity, or idea? I’m always open to a thoughtful conversation.</p>
+      </div>
+    </section>
+
+    <section class="ct-native-channels">
+      <div class="s-inner">
+        <div class="ct-native-section-head"><span class="s-eyebrow">Reach Me</span><div class="ct-native-status"><span></span>Available for opportunities</div></div>
+        <div class="contact-links" aria-label="Contact channels">
+      <a href="mailto:pateladi1525@gmail.com" class="ct-link"><span class="ct-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5A2.25 2.25 0 0 1 19.5 19.5h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0-8.69 5.52a2 2 0 0 1-2.12 0L2.25 6.75"/></svg></span><span><small>Email</small><strong>pateladi1525@gmail.com</strong></span><svg class="ct-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 16.5 16.5 7.5m0 0h-6.75m6.75 0v6.75"/></svg></a>
+      <a href="https://www.linkedin.com/in/adityapatelcs" target="_blank" rel="noopener" class="ct-link"><span class="ct-link-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.32 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.1 20.45H3.54V9H7.1v11.45Z"/></svg></span><span><small>LinkedIn</small><strong>in/adityapatelcs</strong></span><svg class="ct-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 16.5 16.5 7.5m0 0h-6.75m6.75 0v6.75"/></svg></a>
+      <a href="https://github.com/pateladi70" target="_blank" rel="noopener" class="ct-link"><span class="ct-link-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.48 2 2 6.59 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-1.05-.01-1.91-2.78.62-3.37-1.21-3.37-1.21-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.89 1.57 2.34 1.12 2.91.85.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 6.99a9.3 9.3 0 0 1 2.5.34c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.64 1.03 2.76 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.38-.01 2.49-.01 2.83 0 .27.18.59.69.49A10.24 10.24 0 0 0 22 12.25C22 6.59 17.52 2 12 2Z" clip-rule="evenodd"/></svg></span><span><small>GitHub</small><strong>pateladi70</strong></span><svg class="ct-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 16.5 16.5 7.5m0 0h-6.75m6.75 0v6.75"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="ct-native-details">
+      <div class="s-inner ct-native-details-grid">
+        <div><span class="s-eyebrow">Open To</span><p>Software engineering opportunities<br>Thoughtful product collaborations<br>Conversations about practical systems work</p></div>
+        <div><span class="s-eyebrow">Response</span><p>I usually reply within 24 hours.<br>LinkedIn is best for quick conversations.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../assets/js/cursor.js"></script>
+  <script>lucide.createIcons();</script>
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      lucide.createIcons();
+    }
+    function toggleDrawer() {
+      document.querySelector('.hamburger').classList.toggle('active');
+      document.querySelector('.mobile-drawer').classList.toggle('active');
+      document.querySelector('.nav-overlay').classList.toggle('active');
+      document.body.style.overflow = document.querySelector('.mobile-drawer').classList.contains('active') ? 'hidden' : '';
+    }
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+
+    // Scroll reveal animations
+    (function() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+      document.querySelectorAll('.ct-channels, .ct-open, .ct-availability').forEach(el => {
+        el.classList.add('reveal');
+        observer.observe(el);
+      });
+    })();
+
+    // Navbar scroll effect
+    (function() {
+    })();
+
+    // Page transitions
+    (function() {
+      document.querySelectorAll('a:not([target="_blank"]):not([href^="#"]):not([href^="mailto"])').forEach(link => {
+        link.addEventListener('click', (e) => {
+          const href = link.getAttribute('href');
+          if (href && !href.startsWith('#')) {
+            e.preventDefault();
+            document.body.classList.add('page-exit');
+            setTimeout(() => window.location.href = href, 250);
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth; scroll-padding-top: 80px;">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Page not found - Aditya Patel Portfolio">
+  <title>404 · Page Not Found</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+  <!-- navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-text">aditya</span><span class="logo-dot">.</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="pages/projects.html">Work</a>
+      <a href="pages/research.html">Lab</a>
+      <a href="pages/about.html">About</a>
+      <a href="pages/contact.html">Contact</a>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">
+        <i data-lucide="sun" class="icon-sun"></i>
+        <i data-lucide="moon" class="icon-moon"></i>
+      </button>
+    </div>
+    <button class="hamburger" onclick="toggleDrawer()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile drawer -->
+  <div class="nav-overlay" onclick="toggleDrawer()"></div>
+  <div class="mobile-drawer">
+    <button class="drawer-close" onclick="toggleDrawer()" title="Close menu">
+      <i data-lucide="x"></i>
+    </button>
+    <div class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="pages/projects.html">Work</a>
+      <a href="pages/research.html">Lab</a>
+      <a href="pages/about.html">About</a>
+      <a href="pages/contact.html" onclick="toggleDrawer()">Contact</a>
+    </div>
+    <div class="drawer-theme-toggle">
+      <span>Theme</span>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">
+        <i data-lucide="sun" class="icon-sun"></i>
+        <i data-lucide="moon" class="icon-moon"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="error-page">
+      <div class="error-icon">
+        <i data-lucide="map-pin-off"></i>
+      </div>
+      <h1 class="error-code">404</h1>
+      <p class="error-title">Page not found</p>
+      <p class="error-message">The page you're looking for doesn't exist or has been moved.</p>
+      <div class="error-actions">
+        <a href="index.html" class="cta-button">
+          <i data-lucide="home"></i> Go Home
+        </a>
+        <a href="pages/projects.html" class="cta-secondary">
+          <i data-lucide="folder"></i> View Projects
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>lucide.createIcons();</script>
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      lucide.createIcons();
+    }
+    function toggleDrawer() {
+      document.querySelector('.hamburger').classList.toggle('active');
+      document.querySelector('.mobile-drawer').classList.toggle('active');
+      document.querySelector('.nav-overlay').classList.toggle('active');
+      document.body.style.overflow = document.querySelector('.mobile-drawer').classList.contains('active') ? 'hidden' : '';
+    }
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      
+      // Animate error page on load
+      document.querySelector('.error-page').classList.add('reveal', 'visible');
+    })();
+  </script>
+  <script src="assets/js/cursor.js"></script>
+</body>
+
+</html>
