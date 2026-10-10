@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="An in-progress computer vision experiment that samples real video, detects players, reads jersey-number candidates, and links sightings across frames.">
+  <title>Touchline · Lab Case Study</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="../assets/js/site.js"></script>
+</head>
+<body>
+
+<nav class="navbar" aria-label="Main navigation"><a href="../index.html" class="nav-logo"><span class="logo-text">aditya</span><span class="logo-dot">.</span></a><div class="nav-links"><a href="../index.html">Home</a><a href="../pages/projects.html">Work</a><a class="active" href="../pages/research.html">Lab</a><a href="../pages/about.html" hidden>About</a><a href="../pages/contact.html">Contact</a><button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle color theme"><i data-lucide="sun" class="icon-sun"></i><i data-lucide="moon" class="icon-moon"></i></button></div><button class="hamburger" onclick="toggleDrawer()" aria-label="Open navigation"><span></span><span></span><span></span></button></nav><div class="nav-overlay" onclick="toggleDrawer()"></div><div class="mobile-drawer"><button class="drawer-close" onclick="toggleDrawer()" aria-label="Close navigation"><i data-lucide="x"></i></button><div class="drawer-links"><a href="../index.html">Home</a><a href="../pages/projects.html">Work</a><a href="../pages/research.html">Lab</a><a href="../pages/about.html" hidden>About</a><a href="../pages/contact.html">Contact</a></div></div>
+
+<main class="container lab-case">
+<header class="page-header project-detail-header">
+<a href="../pages/research.html" class="back-link" aria-label="Back to lab"><i data-lucide="chevron-left"></i></a>
+<span class="project-eyebrow">Lab case study · Building</span><h1>Touchline</h1><p class="page-intro">From football footage to reviewable player evidence.</p></header>
+<figure class="lab-case-visual"><img src="../assets/images/editorial/touchline.jpg" alt="Concept artwork of football footage with player detection boxes on a desktop monitor"><figcaption>Concept artwork · not an app screenshot</figcaption></figure>
+<section class="project-section project-summary"><div><h2>Case overview</h2><p class="project-lead">An in-progress computer vision experiment that samples real video, detects players, reads jersey-number candidates, and links sightings across frames.</p></div><div class="intro-facts"><div class="intro-fact"><span class="fact-label">Status</span><span class="fact-value">Building</span></div><div class="intro-fact"><span class="fact-label">Focus</span><span class="fact-value">C# · ASP.NET Core · Apple Vision</span></div></div></section>
+<section class="case-grid"><h2><span>01</span>The problem</h2><div><p>A jersey number is a small, moving signal. Distance, blur, occlusion, and changing camera angles make it difficult to read consistently. A useful analysis tool needs to preserve the evidence behind a reading so a person can review it.</p></div></section>
+<section class="case-grid"><h2><span>02</span>From video to evidence</h2><div><p>The browser decodes sampled frames and sends JPEGs to a local C# endpoint. Apple Vision detects people using overlapping tiles, then reads enlarged upper-body crops. Each candidate retains its timestamp, crop, raw text, and OCR score. The review workspace lets a user verify readings and export JSON evidence.</p></div></section>
+<section class="case-grid"><h2><span>03</span>Tracking decisions</h2><div><p>A motion-predicted overlap and center-distance baseline links sightings with one-to-one assignment. It rejects large size changes and close competing matches; gaps longer than 2.5 seconds start a new track. Repeated number support requires at least two readings and a margin over conflicting votes.</p></div></section>
+<section class="case-grid"><h2><span>04</span>Selective AI review</h2><div><p>An optional review path prioritizes conflicting, unreadable, and single-reading tracks. It selects one crop per track and caps requests at 1, 3, or 5 per run. AI suggestions remain separate from baseline OCR evidence. Provider inference and its effectiveness are not yet verified in the project notes.</p></div></section>
+<section class="case-grid"><h2><span>05</span>Evidence so far</h2><div><p>A documented 18.8-second clip run with 24 evenly spaced frames produced 276 person sightings, 60 crops with numeric readings, and 62 provisional track fragments. Seven tracks had repeated number support. These observations demonstrate an operating pipeline; they do not establish player identity or tracking accuracy. Synthetic association checks cover movement, missed samples, ambiguity, long gaps, one-to-one assignment, and conflicting OCR.</p></div></section>
+<section class="case-grid"><h2><span>06</span>Tradeoffs and next steps</h2><div><p>Local detection and OCR make the baseline usable without AI calls, but small digits and crowded scenes remain difficult. The tracker has no appearance re-identification or camera compensation, so crossings and camera cuts can fragment tracks or switch identities. Next, evaluate against independently labeled footage and compare a jersey-specific reader with selective AI review.</p></div></section>
+<nav class="project-nav" aria-label="Case study navigation"><a class="next-project-link" href="../pages/research.html">All lab case studies <i data-lucide="arrow-up-right"></i></a></nav></main><div class="scroll-progress" id="scrollProgress"></div><script src="../assets/js/cursor.js"></script></body></html>

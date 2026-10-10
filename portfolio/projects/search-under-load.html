@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="An ongoing investigation into how full-text retrieval behaves as the dataset and query pressure grow.">
+  <title>Search under load · Lab Case Study</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="../assets/js/site.js"></script>
+</head>
+<body>
+
+<nav class="navbar" aria-label="Main navigation"><a href="../index.html" class="nav-logo"><span class="logo-text">aditya</span><span class="logo-dot">.</span></a><div class="nav-links"><a href="../index.html">Home</a><a href="../pages/projects.html">Work</a><a class="active" href="../pages/research.html">Lab</a><a href="../pages/about.html" hidden>About</a><a href="../pages/contact.html">Contact</a><button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle color theme"><i data-lucide="sun" class="icon-sun"></i><i data-lucide="moon" class="icon-moon"></i></button></div><button class="hamburger" onclick="toggleDrawer()" aria-label="Open navigation"><span></span><span></span><span></span></button></nav><div class="nav-overlay" onclick="toggleDrawer()"></div><div class="mobile-drawer"><button class="drawer-close" onclick="toggleDrawer()" aria-label="Close navigation"><i data-lucide="x"></i></button><div class="drawer-links"><a href="../index.html">Home</a><a href="../pages/projects.html">Work</a><a href="../pages/research.html">Lab</a><a href="../pages/about.html" hidden>About</a><a href="../pages/contact.html">Contact</a></div></div>
+
+<main class="container lab-case">
+<header class="page-header project-detail-header">
+<a href="../pages/research.html" class="back-link" aria-label="Back to lab"><i data-lucide="chevron-left"></i></a>
+<span class="project-eyebrow">Lab case study · Testing</span><h1>Search under load</h1><p class="page-intro">What changes when local search scales?</p></header>
+<figure class="lab-case-visual"><img src="../assets/images/editorial/process-build.png" alt="Code and performance testing workspace"><figcaption>Project concept artwork</figcaption></figure>
+<section class="project-section project-summary"><div><h2>Case overview</h2><p class="project-lead">An ongoing investigation into how full-text retrieval behaves as the dataset and query pressure grow.</p></div><div class="intro-facts"><div class="intro-fact"><span class="fact-label">Status</span><span class="fact-value">Testing</span></div><div class="intro-fact"><span class="fact-label">Focus</span><span class="fact-value">SQLite · FTS5 · Benchmarking</span></div></div></section>
+<section class="case-grid"><h2><span>01</span>The question</h2><div><p>Local search can feel fast with a small dataset. This experiment asks how that experience changes as more content is indexed and more queries compete for resources.</p></div></section>
+<section class="case-grid"><h2><span>02</span>The approach</h2><div><p>The documented focus is SQLite full-text retrieval with FTS5. The case examines dataset size and query pressure as separate variables so a slowdown can be connected to the conditions that produced it.</p></div></section>
+<section class="case-grid"><h2><span>03</span>Measurement decisions</h2><div><p>A useful comparison needs a fixed query set, a recorded dataset size, and consistent execution conditions. Warm and cold runs should be distinguished, and latency should be reported as a distribution rather than only an average. This describes the evaluation direction; a published benchmark is not yet available.</p></div></section>
+<section class="case-grid"><h2><span>04</span>Current evidence</h2><div><p>The experiment is listed as testing. No reproducible benchmark dataset, hardware specification, or measured load results are documented in this portfolio yet.</p></div></section>
+<section class="case-grid"><h2><span>05</span>Next steps</h2><div><p>Publish the benchmark conditions and query cases alongside results. Use those results to decide whether indexing, query design, or workload limits offer the most useful improvement for local retrieval.</p></div></section>
+<nav class="project-nav" aria-label="Case study navigation"><a class="next-project-link" href="../pages/research.html">All lab case studies <i data-lucide="arrow-up-right"></i></a></nav></main><div class="scroll-progress" id="scrollProgress"></div><script src="../assets/js/cursor.js"></script></body></html>

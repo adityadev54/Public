@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="An early planner project bringing tasks, reminders, a calendar, and course notes together around an Excel workbook.">
+  <title>The Book · Lab Case Study</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="../assets/js/site.js"></script>
+</head>
+<body>
+
+<nav class="navbar" aria-label="Main navigation"><a href="../index.html" class="nav-logo"><span class="logo-text">aditya</span><span class="logo-dot">.</span></a><div class="nav-links"><a href="../index.html">Home</a><a href="../pages/projects.html">Work</a><a class="active" href="../pages/research.html">Lab</a><a href="../pages/about.html" hidden>About</a><a href="../pages/contact.html">Contact</a><button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle color theme"><i data-lucide="sun" class="icon-sun"></i><i data-lucide="moon" class="icon-moon"></i></button></div><button class="hamburger" onclick="toggleDrawer()" aria-label="Open navigation"><span></span><span></span><span></span></button></nav><div class="nav-overlay" onclick="toggleDrawer()"></div><div class="mobile-drawer"><button class="drawer-close" onclick="toggleDrawer()" aria-label="Close navigation"><i data-lucide="x"></i></button><div class="drawer-links"><a href="../index.html">Home</a><a href="../pages/projects.html">Work</a><a href="../pages/research.html">Lab</a><a href="../pages/about.html" hidden>About</a><a href="../pages/contact.html">Contact</a></div></div>
+
+<main class="container lab-case">
+<header class="page-header project-detail-header">
+<a href="../pages/research.html" class="back-link" aria-label="Back to lab"><i data-lucide="chevron-left"></i></a>
+<span class="project-eyebrow">Lab case study · Early version</span><h1>The Book</h1><p class="page-intro">Coursework and everyday life, kept in one workbook.</p></header>
+<figure class="lab-case-visual"><img src="../assets/images/editorial/book-planner.png" alt="An open weekly planner beside a laptop and green notebooks"><figcaption>Project concept artwork</figcaption></figure>
+<section class="project-section project-summary"><div><h2>Case overview</h2><p class="project-lead">An early planner project bringing tasks, reminders, a calendar, and course notes together around an Excel workbook.</p></div><div class="intro-facts"><div class="intro-fact"><span class="fact-label">Status</span><span class="fact-value">Early version</span></div><div class="intro-fact"><span class="fact-label">Focus</span><span class="fact-value">Flutter · Excel workbook</span></div></div></section>
+<section class="case-grid"><h2><span>01</span>The problem</h2><div><p>Coursework has several kinds of information: what needs doing, when it is due, and the notes needed to do it. The Book explores a quieter way to keep those pieces together.</p></div></section>
+<section class="case-grid"><h2><span>02</span>The product direction</h2><div><p>The planner brings tasks, reminders, calendar context, and course notes into one experience. Its documented direction uses Flutter with an Excel workbook as the place where planning information lives.</p></div></section>
+<section class="case-grid"><h2><span>03</span>The tradeoff</h2><div><p>A workbook gives the project a familiar, portable format. It also raises design questions around edits, synchronization, and preserving a user’s existing structure. Those questions need to be resolved as the early version develops.</p></div></section>
+<section class="case-grid"><h2><span>04</span>Current evidence</h2><div><p>The portfolio identifies The Book as an early version and links to the SemesterPlanning source repository. Release details, usability findings, and reliability measurements are not documented here yet.</p></div></section>
+<section class="case-grid"><h2><span>05</span>Next steps</h2><div><p>Verify the core planning loop: create a task, connect it to coursework, find it in calendar context, and retain it in the workbook. Then test how the experience handles changes made directly in Excel.</p></div></section>
+<div class="project-links"><a class="resume-btn" href="https://github.com/adityadev54/SemesterPlanning" target="_blank" rel="noopener"><i data-lucide="github"></i>View source</a></div>
+<nav class="project-nav" aria-label="Case study navigation"><a class="next-project-link" href="../pages/research.html">All lab case studies <i data-lucide="arrow-up-right"></i></a></nav></main><div class="scroll-progress" id="scrollProgress"></div><script src="../assets/js/cursor.js"></script></body></html>

@@ -1,0 +1,12 @@
+name: shaderx_vortex
+description: Full-screen interactive vortex backgrounds for Flutter.
+version: 0.1.0
+publish_to: none
+environment:
+  sdk: ^3.11.0
+dependencies:
+  flutter:
+    sdk: flutter
+flutter:
+  shaders:
+    - shaders/vortex.frag

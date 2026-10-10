@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import { jerseyReading, matchingPlayer } from '../wwwroot/js/challenge-rules.js';
+const target={x:.1,y:.2,width:.1,height:.3,readings:[{text:'12',confidence:.9}]};
+assert.equal(jerseyReading(target),12);
+assert.equal(jerseyReading({...target,readings:[{text:'12',confidence:.9},{text:'13',confidence:.9}]}),null);
+assert.equal(jerseyReading({...target,readings:[{text:'12',confidence:.1}]}),null);
+assert.equal(matchingPlayer(target,[]),null);
+assert.equal(matchingPlayer(target,[target,{...target,id:2}]),null);
+assert.equal(matchingPlayer(target,[{...target,x:.7},target]),target);
+console.log('Passed conservative reading and target-matching checks.');

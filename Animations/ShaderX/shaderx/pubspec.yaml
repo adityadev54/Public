@@ -1,0 +1,43 @@
+name: shaderx
+description: "A daily studio for theme-driven shader compositions."
+publish_to: 'none'
+version: 0.1.0+1
+environment:
+  sdk: ^3.11.0
+dependencies:
+  shaderx_vortex:
+    path: packages/shaderx_vortex
+  flutter:
+    sdk: flutter
+  kin_ui: ^1.7.1
+  heroicons_flutter: 0.5.0
+  shared_preferences: ^2.5.4
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/illustrations/new-composition.png
+  shaders:
+    - shaders/components/glass_tide.frag
+    - shaders/components/emitter_liquid.frag
+    - shaders/components/emitter_chrome.frag
+    - shaders/components/particle_sphere.frag
+    - shaders/components/paper_fragments.frag
+    - shaders/components/graphite_bloom.frag
+    - shaders/components/ember_flock.frag
+    - shaders/components/petal_assembly.frag
+    - shaders/components/orbital_dust.frag
+    - shaders/components/vortex_field.frag
+    - shaders/components/interference_film.frag
+    - shaders/components/folded_membrane.frag
+    - shaders/components/contour_field.frag
+    - shaders/components/resonant_sand.frag
+    - shaders/components/leaf_veins.frag
+    - shaders/components/crystal_facets.frag
+    - shaders/components/vapor_layers.frag
+dependency_overrides:
+  kin_ui:
+    path: vendor/kin_ui

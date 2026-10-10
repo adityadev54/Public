@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <title>Touchline · Sports vision</title>
+    <script>try { const saved = localStorage.getItem('touchline-theme'); document.documentElement.dataset.bsTheme = saved === 'light' || saved === 'dark' ? saved : matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; } catch {}</script>
+    <link rel="stylesheet" href="/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/app.css?v=feedback-1">
+</head>
+
+<body>
+    <div class="app-shell">
+        <aside class="sidebar" id="sidebar" aria-label="Workspace sidebar">
+            <div class="sidebar-top"><a href="/" class="brand">Touchline</a><button id="closeSidebar"
+                    class="icon-button" aria-label="Close sidebar"><svg class="hero-icon" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                        <use href="/vendor/heroicons/sprite.svg#x-mark"></use>
+                    </svg></button></div>
+            <button class="nav-item" id="newSession"><svg class="hero-icon" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                    <use href="/vendor/heroicons/sprite.svg#plus"></use>
+                </svg> New analysis</button>
+            <nav aria-label="Workspace">
+                <button class="nav-item active" data-view="lab"><svg class="hero-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7.5 3.75H6A2.25 2.25 0 0 0 3.75 6v1.5m12.75-3.75H18A2.25 2.25 0 0 1 20.25 6v1.5m0 9V18A2.25 2.25 0 0 1 18 20.25h-1.5m-9 0H6A2.25 2.25 0 0 1 3.75 18v-1.5M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg> Sports vision</button>
+                <button class="nav-item" data-view="library"><svg class="hero-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="/vendor/heroicons/sprite.svg#video-camera"></use></svg> Video library</button><button class="nav-item" data-view="plan"><svg class="hero-icon" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                        <use href="/vendor/heroicons/sprite.svg#clipboard-document-list"></use>
+                    </svg> Research plan</button>
+
+                <button class="nav-item" data-view="challenge"><svg class="hero-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="/vendor/heroicons/sprite.svg#eye"></use></svg> AI, prove it</button>
+            </nav>
+            <div class="nav-label">Current session</div>
+            <div id="sessionLabel" class="session-label">No video selected</div>
+            <button class="sidebar-bottom user-menu-toggle" popovertarget="userMenu" aria-label="Personal workspace menu"><span class="avatar">AP</span><span>Personal workspace<small>Settings</small></span><svg class="hero-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><use href="/vendor/heroicons/sprite.svg#chevron-down"></use></svg></button>
+            <div id="userMenu" popover="auto"><button id="openAiSettings" type="button"><svg class="hero-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><use href="/vendor/heroicons/sprite.svg#clipboard-document-list"></use></svg>AI settings</button></div>
+        </aside>
+        <button id="sidebarScrim" class="sidebar-scrim" aria-label="Close sidebar" hidden></button>
+        <main>
+            <header>
+                <div class="header-left"><button id="menu" class="icon-button" aria-label="Toggle sidebar"
+                        aria-expanded="false"><svg class="hero-icon" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                            <use href="/vendor/heroicons/sprite.svg#bars-3"></use>
+                        </svg></button><span class="header-title">Touchline <span class="header-subtitle">/ Sports vision</span></span></div><div class="header-actions"><span id="processingSource" class="local-status"></span><button id="themeToggle" type="button" class="icon-button" aria-label="Switch color theme"><svg viewBox="0 0 24 24" class="hero-icon" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.9 13.2A9 9 0 0 1 10.8 3.1a9 9 0 1 0 10.1 10.1Z"/></svg></button></div>
+            </header>
+            <section id="lab" class="workspace">
+                <div class="intro">
+                    <h1>Soccer analysis</h1>
+                    <p>Choose a clip, analyze the players, then review the evidence.</p>
+                </div>
+                <details id="sourcePanel" class="source-panel" open>
+                    <summary><span>Video &amp; analysis settings</span><svg class="hero-icon disclosure-icon"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"
+                            focusable="false">
+                            <use href="/vendor/heroicons/sprite.svg#chevron-down"></use>
+                        </svg></summary>
+                    <div class="analysis-surface row g-3">
+                        <div class="video-column col-12 col-md-7">
+                            <div id="preview" class="empty-video"><span class="empty-symbol"><svg class="hero-icon"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                        aria-hidden="true" focusable="false">
+                                        <use href="/vendor/heroicons/sprite.svg#video-camera"></use>
+                                    </svg></span><strong>Start with a sports video</strong>
+                                <p>Choose an MP4, MOV, or WebM from your computer.</p><label for="clipInput"
+                                    class="btn btn-light"><svg class="hero-icon" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                                        <use href="/vendor/heroicons/sprite.svg#arrow-up-tray"></use>
+                                    </svg> Choose video</label>
+                            </div>
+                            <video id="video" controls hidden></video>
+                            <div class="clip-row"><span id="clipName">No video selected</span><label
+                                    class="btn btn-sm btn-dark" for="clipInput"><svg class="hero-icon"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                        aria-hidden="true" focusable="false">
+                                        <use href="/vendor/heroicons/sprite.svg#arrow-up-tray"></use>
+                                    </svg> Change video</label><button id="saveClip" type="button" class="btn btn-sm btn-dark" disabled>Save to library</button><input type="file" id="clipInput" accept="video/*"
+                                    hidden></div>
+                        </div>
+                        <div class="settings-column col-12 col-md-5">
+                            <form id="experimentForm" class="composer">
+                                <div class="composer-title"><span>Analysis settings</span><span
+                                        class="composer-hint">Local processing</span></div>
+                                <div class="composer-controls">
+                                    <div class="control-group"><label for="sport">Sport</label><select id="sport" class="form-select form-select-sm"><option value="soccer">Soccer</option><option value="american-football">American football</option></select></div><div class="control-group"><label for="strategy">Sampling method</label><select
+                                            id="strategy" class="form-select form-select-sm">
+                                            <option value="uniform">Evenly spaced</option>
+                                            <option value="selective">Sharpest per time window</option>
+                                        </select></div>
+                                    <div class="control-group budget-control"><label for="budget">Frame
+                                            budget</label><select id="budget" class="form-select form-select-sm">
+                                            <option>2</option>
+                                            <option>5</option>
+                                            <option>12</option>
+                                            <option selected>24</option>
+                                            <option>40</option>
+                                        </select></div><button id="run" class="btn btn-primary" type="submit"><svg
+                                            class="hero-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="1.5" aria-hidden="true" focusable="false">
+                                            <use href="/vendor/heroicons/sprite.svg#play"></use>
+                                        </svg> <span id="runLabel">Analyze video</span></button>
+                                </div>
+                            </form>
+                            <div class="ai-settings"><label class="filter-control"><input id="aiEnabled" class="form-check-input" type="checkbox"> AI review of uncertain tracks</label><label for="aiBudget">AI call limit</label><select id="aiBudget" class="form-select form-select-sm"><option>1</option><option selected>3</option><option>5</option></select><p id="aiConnection" role="status">Checking model connection…</p></div>
+                <div class="status-row">
+                                <div id="notice" role="status" aria-live="polite">Choose a video to start.</div>
+                                <progress id="progress" max="100" value="0" hidden class="w-100 mt-2"></progress>
+                            </div>
+                            <p class="quick-guide">Choose a short clip → Run analysis → Review number evidence. Save clips in your library to reuse them.</p><p class="privacy-note">Processed locally on this Mac.</p>
+                        </div>
+                    </div>
+                </details>
+                <section id="results" hidden class="results" aria-label="Analysis results">
+                    <div class="section-heading">
+                        <h2>Results</h2><button id="export" class="btn btn-sm btn-dark"><svg class="hero-icon"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                aria-hidden="true" focusable="false">
+                                <use href="/vendor/heroicons/sprite.svg#arrow-down-tray"></use>
+                            </svg> Export JSON</button>
+                    </div>
+                    <div id="metrics" class="metrics" aria-label="Measured analysis summary"></div>
+                    <div id="summary" class="result-summary"></div><div id="sourceLegend" class="source-legend"></div><p id="aiSummary" class="ai-summary" role="status"></p>
+                    <div class="review-tabs" role="tablist" aria-label="Review evidence"><button id="tracksTab"
+                            role="tab" aria-selected="true" aria-controls="trackResults"><svg class="hero-icon"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                aria-hidden="true" focusable="false">
+                                <use href="/vendor/heroicons/sprite.svg#video-camera"></use>
+                            </svg> Tracks</button><button id="framesTab" role="tab" aria-selected="false"
+                            aria-controls="framePanel"><svg class="hero-icon" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                                <use href="/vendor/heroicons/sprite.svg#photo"></use>
+                            </svg> Frame review</button></div>
+                    <section id="trackResults" role="tabpanel" aria-labelledby="tracksTab" hidden>
+                        <div class="review-toolbar">
+                            <div id="trackSummary" class="result-summary"></div><label class="visually-hidden"
+                                for="trackFilter">Filter tracks</label><select id="trackFilter"
+                                class="form-select form-select-sm">
+                                <option value="all">All tracks</option>
+                                <option value="supported">Repeated readings</option>
+                                <option value="multiple">Multiple sightings</option>
+                            </select>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table track-table">
+                                <thead>
+                                    <tr>
+                                        <th>Track</th>
+                                        <th>Number evidence</th>
+                                        <th>Sightings</th>
+                                        <th>Interval</th>
+                                        <th><span class="visually-hidden">Review track</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="trackRows"></tbody>
+                            </table>
+                        </div>
+                        <div class="review-pager"><button id="prevTracks" class="btn btn-dark btn-sm"><svg
+                                    class="hero-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" aria-hidden="true" focusable="false">
+                                    <use href="/vendor/heroicons/sprite.svg#arrow-left"></use>
+                                </svg> Previous</button><span id="trackPage" role="status"></span><button
+                                id="nextTracks" class="btn btn-dark btn-sm">Next <svg class="hero-icon"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    aria-hidden="true" focusable="false">
+                                    <use href="/vendor/heroicons/sprite.svg#arrow-right"></use>
+                                </svg></button></div>
+                        <p class="track-note">Provisional IDs. Crossings and missed detections can split or swap tracks.
+                        </p>
+                    </section>
+                    <section id="framePanel" role="tabpanel" aria-labelledby="framesTab" hidden>
+                        <div class="review-toolbar"><label for="frameSelect" class="visually-hidden">Choose a processed
+                                frame</label><select id="frameSelect" class="form-select form-select-sm"></select><label
+                                class="filter-control"><input id="readingsOnly" class="form-check-input"
+                                    type="checkbox"> Readings only</label></div>
+                        <div id="frames" class="frame-grid"></div>
+                        <div class="review-pager"><button id="prevFrame" class="btn btn-dark btn-sm"><svg
+                                    class="hero-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" aria-hidden="true" focusable="false">
+                                    <use href="/vendor/heroicons/sprite.svg#arrow-left"></use>
+                                </svg> Previous</button><span id="framePage" role="status"></span><button id="nextFrame"
+                                class="btn btn-dark btn-sm">Next <svg class="hero-icon" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                                    <use href="/vendor/heroicons/sprite.svg#arrow-right"></use>
+                                </svg></button></div>
+                    </section>
+                </section>
+                
+                <footer>Verify number readings and track identities against the video.
+                </footer>
+            </section>
+            <section id="library" class="workspace" hidden><div class="intro"><h1>Video library</h1><p>Saved videos for repeat analysis.</p></div><div class="section-heading"><span id="libraryCount">0 / 5 videos</span><label for="libraryInput" class="btn btn-light">Add videos</label><input id="libraryInput" type="file" accept="video/*" multiple hidden></div><p id="libraryStatus" role="status"></p><div id="libraryList" class="library-grid"></div><label class="filter-control"><input id="showRemoved" type="checkbox" class="form-check-input"> Show removed videos</label><p class="library-note">Saved in this browser and address. Keep original files as backups. Cloud AI review needs internet.</p></section>
+        <section id="plan" class="workspace" hidden><div class="intro"><h1>Research dashboard</h1><p>Measured evidence from local analysis and selective AI review.</p></div><div class="research-summary"><div><span>Experiment</span><strong id="researchRun"></strong></div><div><span>Model usage</span><strong id="researchUsage"></strong></div><div><span>Verification</span><strong id="researchLabels"></strong></div></div><div class="research-grid"><div class="research-column"><article class="research-card"><div class="chart-heading"><h2>Recognition outcomes</h2><span>Labeled sightings</span></div><div class="chart-legend"><span class="legend-local">Local OCR</span><span class="legend-ai">Local + AI</span></div><div id="researchChart"></div><p id="sampleNote"></p></article><article class="research-card"><div class="chart-heading"><h2>AI review outcomes</h2><span>Selected tracks only</span></div><div id="researchAiChart"></div><p>Suggestions require verification. Failed requests are counted separately.</p></article></div><div class="research-column"><article class="research-card"><div class="chart-heading"><h2>Detections over time</h2><span>People per sampled frame</span></div><div id="researchTimeline"></div><p>Repeated detections, not unique players or tracking accuracy.</p></article><article class="research-card method-card"><h2>Experiment design</h2><div class="method-row"><strong>Local baseline</strong><p>Detection, OCR, motion tracking, repeated number evidence.</p></div><div class="method-row"><strong>Selective AI</strong><p>Same baseline, with one crop per uncertain track and 1–5 calls per run.</p></div><details><summary>How to verify and interpret</summary><p>Label visible numbers in Frame review. Use a consistent reference ID for each person across frames. Both methods are evaluated on the same number labels. ID changes are reference-based counts, not IDF1 or HOTA. Local detection also uses machine vision; the comparison is cloud review enabled versus disabled.</p></details></article></div></div></section>
+
+            <section id="challenge" class="workspace" hidden aria-labelledby="challengeTitle">
+                <div class="intro"><h1 id="challengeTitle">Can you fool Touchline?</h1><p>One real video frame. One small edit. Can you change its reading?</p></div>
+                <p id="challengeStatus" role="status"></p>
+                <div class="challenge-layout">
+                    <article class="research-card">
+                        <div class="chart-heading"><h2>Your edited frame</h2><span id="challengeRound">0 successful tricks</span></div>
+                        <canvas id="challengeCanvas" class="challenge-frame" tabindex="0" aria-label="Editable video frame. Use arrow keys to move the patch."></canvas>
+                        <canvas id="challengeFocus" class="challenge-frame" tabindex="0" aria-label="Jersey close-up. Drag or use arrow keys to move the patch." hidden></canvas>
+                        <p>Drag the patch onto the jersey, or use arrow keys. Try fooling it with the smallest patch.</p>
+                        <div class="challenge-pair challenge-toolbar" role="group" aria-label="Frame tools"><button id="challengeZoom" class="btn btn-dark btn-sm" type="button" aria-pressed="false">Zoom to jersey</button><button id="challengeNext" class="btn btn-dark btn-sm" type="button">Next player →</button><button id="challengeOriginal" class="btn btn-dark btn-sm" type="button">Hold to see original</button><button id="challengeReset" class="btn btn-dark btn-sm" type="button">Reset patch</button></div>
+                    </article>
+                    <article class="research-card">
+                        <h2>Build your trick</h2>
+                        <label for="challengeFrame">Choose a video moment</label><select id="challengeFrame" class="form-select form-select-sm"></select>
+                        <label for="challengePerson">Target player</label><select id="challengePerson" class="form-select form-select-sm"></select>
+                        <label for="challengeTruth">Verified jersey number</label><input id="challengeTruth" class="form-control form-control-sm" inputmode="numeric" maxlength="2" placeholder="Check the original video first">
+                        <label for="challengeMode">Your move</label><select id="challengeMode" class="form-select form-select-sm"><option value="hide">Hide the clue</option><option value="decoy">Plant a decoy</option></select>
+                        <div id="challengeDecoyGroup" hidden><label for="challengeDecoy">Decoy number</label><input id="challengeDecoy" class="form-control form-control-sm" value="99" inputmode="numeric" maxlength="2"></div>
+                        <label for="challengeSize">Patch size</label><input id="challengeSize" type="range" min="15" max="100" value="45" class="form-range">
+                        <button id="challengeRun" class="btn btn-light challenge-run" type="button">Challenge Touchline</button>
+                        <div class="challenge-score"><span id="challengeAttempts">0 attempts</span><span id="challengeBest">Smallest winning patch: —</span></div><div id="challengeEvidence" class="challenge-verdict" role="status">Analyze a video to unlock the challenge.</div><div id="challengeFeedback" class="challenge-feedback" hidden>
+                            <span>How was this test?</span>
+                            <div role="group" aria-label="Test feedback">
+                                <button type="button" class="btn" data-feedback="like" aria-label="Like this test" aria-pressed="false" title="Like">👍</button>
+                                <button type="button" class="btn" data-feedback="dislike" aria-label="Dislike this test" aria-pressed="false" title="Dislike">👎</button>
+                                <button type="button" class="btn" data-feedback="skip" aria-label="Prefer not to answer" aria-pressed="false" title="Prefer not to answer">🤐</button>
+                            </div>
+                            <small id="challengeFeedbackStatus" role="status"></small>
+                        </div>
+                        <p class="challenge-note">A trick counts only when OCR reads one wrong number. Unreadable results and missed detections are shown separately. This round tests detection + OCR on one frame, not tracking or cloud AI.</p>
+                        <button id="challengeReview" class="btn btn-dark btn-sm" type="button">Verify in frame review</button>
+                    </article>
+                </div>
+                <button id="challengeAnalyze" class="btn btn-dark btn-sm" type="button">Open video analysis</button>
+            </section>
+        </main>
+    </div>
+    <dialog id="aiSettingsDialog" aria-labelledby="aiSettingsTitle"><div class="dialog-heading"><h2 id="aiSettingsTitle">AI connection</h2><button id="closeAiSettings" class="icon-button" type="button" aria-label="Close AI settings"><svg class="hero-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><use href="/vendor/heroicons/sprite.svg#x-mark"></use></svg></button></div><p class="dialog-note">Optional cloud review sends selected player crops to a vision model. Local analysis works without a key.</p><div class="ai-key-controls"><label for="aiKey">API key</label><input id="aiKey" class="form-control" type="password" autocomplete="off" spellcheck="false" autocapitalize="off" placeholder="Paste your key"><div class="key-actions"><button id="saveAiKey" class="btn btn-dark btn-sm" type="button">Save key</button><button id="clearAiKey" class="btn btn-dark btn-sm" type="button">Clear key</button></div><small>Held only in server memory until restart. Never stored in this browser.</small></div><p id="keyStatus" role="status"></p></dialog>
+<script type="module" src="/js/app.js?v=feedback-1"></script>
+</body>
+
+</html>

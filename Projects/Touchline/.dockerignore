@@ -1,0 +1,14 @@
+bin/
+obj/
+Data/
+.git/
+Tools/vision-reader
+**/.env*
+**/*.mp4
+**/*.zip
+**/*.json.secret
+
+**/bin/
+**/obj/
+**/Data/
+**/Tools/vision-reader

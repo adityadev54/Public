@@ -5736,6 +5736,35 @@ body.page-exit {
 
 /* Personal work: a compact mosaic, with a few larger pieces setting the rhythm. */
 .creative-life { padding: clamp(56px, 7vw, 88px) 0 76px; }
+.creative-life[hidden] { display: none; }
+.navbar a[href$="about.html"],
+.mobile-drawer a[href$="about.html"],
+.navbar a[hidden],
+.mobile-drawer a[hidden] { display: none !important; }
+
+/* Lab case studies share the engineering case-study typography and navigation. */
+.lab-case-visual { position: relative; margin: 0 0 48px; overflow: hidden; border-radius: 18px; background: var(--bg-secondary); }
+.lab-case-visual img { display: block; width: 100%; height: clamp(240px, 42vw, 520px); object-fit: cover; }
+.lab-case-visual figcaption { padding: 12px 18px; color: var(--text-muted); font-size: 11px; }
+.lab-case-index { padding-bottom: 72px; }
+.lab-case-preview { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 48px; padding: 40px 0; border-top: 1px solid var(--border-color); scroll-margin-top: 100px; }
+.lab-case-preview-image { display: block; overflow: hidden; border-radius: 14px; }
+.lab-case-preview-image img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; transition: transform .4s ease; }
+.lab-case-preview-image:hover img { transform: scale(1.025); }
+.lab-case-preview h2 { margin: 0 0 16px; font-size: clamp(26px, 3vw, 38px); letter-spacing: -.04em; }
+.lab-case-preview p { color: var(--text-secondary); line-height: 1.75; }
+.lab-case-preview small { display: block; margin: 20px 0 12px; color: var(--text-muted); }
+.lab-case-preview .text-action { width: max-content; }
+@media (max-width: 760px) {
+  .lab-case-preview { grid-template-columns: 1fr; gap: 24px; padding: 30px 0; }
+  .lab-case-visual { margin-bottom: 30px; }
+}
+
+@media (max-width: 600px) {
+  .home-lab .process-cuts { flex-direction: column; height: auto; }
+  .home-lab .process-cut { flex: none; height: 100px; transition: height .45s ease; }
+  .home-lab .process-cut.active { flex: none; height: 280px; }
+}
 .creative-intro { display: flex; justify-content: space-between; align-items: end; gap: 28px; margin-bottom: 30px; }
 .creative-intro h2 { margin: 0; color: var(--text-primary); font-size: clamp(30px, 4vw, 48px); line-height: 1.08; letter-spacing: -.05em; text-transform: none; }
 .creative-intro p { max-width: 300px; margin: 0; color: var(--text-secondary); font-size: 14px; line-height: 1.75; }

@@ -1,0 +1,97 @@
+{
+  "dataset": "SoccerNet Jersey test",
+  "method": "Whole-player-crop local OCR; repeated-vote baseline",
+  "selection": "First numeric tracklet IDs; uniformly sampled frames",
+  "aiCalls": 0,
+  "tracksEvaluated": 10,
+  "correct": 2,
+  "accuracy": 0.2,
+  "abstentions": 10,
+  "note": "Small descriptive pilot, not benchmark-wide accuracy. -1 is the unreadable class; no tracking evaluation.",
+  "results": [
+    {
+      "tracklet": "0",
+      "frames": 5,
+      "prediction": -1,
+      "expected": 4,
+      "correct": false,
+      "votes": {}
+    },
+    {
+      "tracklet": "1",
+      "frames": 5,
+      "prediction": -1,
+      "expected": 93,
+      "correct": false,
+      "votes": {}
+    },
+    {
+      "tracklet": "2",
+      "frames": 5,
+      "prediction": -1,
+      "expected": 25,
+      "correct": false,
+      "votes": {
+        "25": 1
+      }
+    },
+    {
+      "tracklet": "3",
+      "frames": 5,
+      "prediction": -1,
+      "expected": -1,
+      "correct": true,
+      "votes": {}
+    },
+    {
+      "tracklet": "4",
+      "frames": 5,
+      "prediction": -1,
+      "expected": -1,
+      "correct": true,
+      "votes": {}
+    },
+    {
+      "tracklet": "5",
+      "frames": 5,
+      "prediction": -1,
+      "expected": 11,
+      "correct": false,
+      "votes": {}
+    },
+    {
+      "tracklet": "6",
+      "frames": 5,
+      "prediction": -1,
+      "expected": 34,
+      "correct": false,
+      "votes": {}
+    },
+    {
+      "tracklet": "7",
+      "frames": 5,
+      "prediction": -1,
+      "expected": 44,
+      "correct": false,
+      "votes": {}
+    },
+    {
+      "tracklet": "8",
+      "frames": 5,
+      "prediction": -1,
+      "expected": 33,
+      "correct": false,
+      "votes": {
+        "33": 1
+      }
+    },
+    {
+      "tracklet": "9",
+      "frames": 5,
+      "prediction": -1,
+      "expected": 20,
+      "correct": false,
+      "votes": {}
+    }
+  ]
+}

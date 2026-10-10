@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <!-- Build the macOS OCR bridge alongside the C# app, without NuGet dependencies. -->
+  <Target Name="BuildVisionReader" BeforeTargets="Build" Inputs="Tools/VisionReader.swift" Outputs="Tools/vision-reader" Condition="$([MSBuild]::IsOSPlatform('OSX'))">
+    <Exec Command="xcrun swiftc &quot;$(MSBuildProjectDirectory)/Tools/VisionReader.swift&quot; -o &quot;$(MSBuildProjectDirectory)/Tools/vision-reader&quot;" />
+  </Target>
+</Project>
